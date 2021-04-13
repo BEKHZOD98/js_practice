@@ -1,12 +1,21 @@
-const marks = [81,74,86,59,77];
+const marks = [81, 74, 88, 94, 77];
+calculateGrade(marks);
 
-const SUBJECTS_N = 5;
-function calculateGrade(marks){
-    for(let grade of marks){
-       let totalSum = 0;
-        totalSum  += marks[grade];
-        let average = 0;
-        average = totalSum / SUBJECTS_N;
-        console.log(average);
+function calculateGrade(marks) {
+    let avrg = calculateAverage(marks);
+    if (avrg <= 50) return 'F';
+    if (avrg <= 60) return 'D';
+    if (avrg <= 70) return 'C';
+    if (avrg <= 80) return 'B';
+    return 'A';
+}
+function calculateAverage(array){
+    let sum = 0;
+    for (let value of array) {
+        sum += value;
     }
-}calculateGrade(marks);
+
+    let avrg = sum / array.length;
+    return avrg;
+}
+console.log(calculateGrade(marks));
