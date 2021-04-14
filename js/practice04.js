@@ -19,3 +19,4 @@ function calculateAverage(array){
     return avrg;
 }
 console.log(calculateGrade(marks));
+console.log('hello world');
